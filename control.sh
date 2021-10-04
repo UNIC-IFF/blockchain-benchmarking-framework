@@ -21,7 +21,8 @@ Network types:
        Runs the action for the  network of each supported type for the given arguments
   <network-type>
        Runs the action for the given network type. If there is no such type, it exits with error.
-
+  --start-monitoring-stack|-mon
+       Starts the monitoring stack
 Actions:
   start     --val-num|-n <num of validators>
        Starts a network with <num_validators> 
@@ -96,6 +97,21 @@ while [ "$1" != "" ]; do
   case $1 in
     --all|-a ) shift
       echo "$@"
+      exit
+      while [ "$1" != "" ]; do
+        case $1 in 
+             -n|--val-num ) shift
+               VAL_NUM=$1
+               ;;
+        esac
+        shift
+      done
+      start_network $VAL_NUM
+      exit
+      ;;
+    --start-monitoring-stack|-mon ) shift
+      echo "$@"
+#      ./monitoring-stack/run_monitoring_services.sh
       exit
       while [ "$1" != "" ]; do
         case $1 in 

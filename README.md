@@ -1,2 +1,2 @@
-# blockchain-benchmarking-framework
-Backbone scripts and configuration for blockchain benchmarking framework.
+# Blockchain Benchmarking Framework
+Backbone scripts and configuration for Blockchain Benchmarking Framework.

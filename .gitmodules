@@ -1,3 +1,6 @@
 [submodule "monitoring-stack"]
 	path = monitoring-stack
 	url = ../BBF-monitoring
+[submodule "networks/xrpl"]
+	path = networks/xrpl
+	url = ../ripple-docker-testnet

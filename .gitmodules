@@ -4,3 +4,6 @@
 [submodule "networks/xrpl"]
 	path = networks/xrpl
 	url = ../ripple-docker-testnet
+[submodule "networks/besu-poa"]
+	path = networks/besu-poa
+	url = ../besu-docker-testnet

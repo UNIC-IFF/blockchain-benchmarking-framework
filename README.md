@@ -25,6 +25,29 @@ Actions:
 ## Using the framework
 *control.sh* script is used to control the networks.
 ```
+control.sh is the main control script for the Blockchain Benchmarking Framework.
+Usage : control.sh <network-type> <action> <arguments>
+
+Network types:
+  --list-network-types|-list
+       Prints a list of the supported  network types
+  --all|-a
+       Runs the action for the  network of each supported type for the given arguments
+  <network-type>
+       Runs the action for the given network type. If there is no such type, it exits with error.
+  --start-monitoring-stack|-mon
+       Starts the monitoring stack
+Actions:
+  start     --val-num|-n <num of validators>
+       Starts a network with <num_validators> 
+  configure --val-num|-n <num of validators>
+       configures a network with <num_validators> 
+  stop
+       Stops the running networks
+  clean
+       Cleans up the configuration directories of the networks
+  status
+       Prints the status of the networks
 ```
 
 # Authors/Contributors

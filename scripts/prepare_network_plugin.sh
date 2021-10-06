@@ -1,6 +1,9 @@
 #!/bin/bash
 
 NETWORK_PLUGINS_INSTALLATION_DIRS=${NETWORKS_ROOT_DIR:-"$(dirname $0)/../networks/"}
+MONSTACK_PLUGINS_INSTALLATION_DIRS=${MONSTACK_ROOT_DIR:-"$(dirname $0)/../monitoring-stacks/"}
+TRAFFICGEN_PLUGINS_INSTALLATION_DIRS=${TRAFFICGEN_ROOT_DIR:-"$(dirname $0)/../traffic-generators/"}
+SCENARIO_PLUGINS_INSTALLATION_DIRS=${SCENARIO_ROOT_DIR:-"$(dirname $0)/../scenarios/"}
 KNOWN_PLUGINS_REGISTRY_FILE=${KNOWN_PLUGINS_REGISTRY_FILE:-"$(dirname $0)/../known_network_plugins.json"}
 
 

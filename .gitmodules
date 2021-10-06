@@ -1,5 +1,5 @@
 [submodule "monitoring-stack"]
-	path = monitoring-stack
+	path = monitoring-stacks/prom-monitoring-stack
 	url = ../BBF-monitoring
 [submodule "networks/xrpl"]
 	path = networks/xrpl

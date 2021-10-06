@@ -1,0 +1,32 @@
+{
+  "networks": {
+    "xrpl":{
+      "name": "xrpl",
+      "repo_url": "./ripple-docker-testnet",
+      "branch":"4th-article-bbf-compatibility",
+      "description":"Blockchain benchmarking framework port for XRP Ledger private network"
+    },
+    "besu":{
+      "name": "besu",
+      "repo_url": "./besu-docker-testnet",
+      "branch":"benchmarking_framework_compatibility",
+      "description":"Blockchain benchmarking framework port for Hyperledger Besu  private PoA clique network"
+    },
+    "geth":{
+      "name": "geth",
+      "repo_url": "https://github.com/mtouloup/eth-docker-testnet.git",
+      "branch":"main",
+      "description":"Blockchain benchmarking framework port for Geth private PoA network"
+    }
+    },
+  "traffic_generators": [],
+  "scenarios": [],
+  "monitoring_stacks": [
+    {
+       "name": "prom-monitoring-stack",
+      "repo_url": "./BBF_monitoring",
+      "branch":"development",
+      "description":"Blockchain benchmarking framework basic/default monitoring stack based on Prometheus stack"
+    }
+]
+}

@@ -7,3 +7,6 @@
 [submodule "networks/besu-poa"]
 	path = networks/besu-poa
 	url = ../besu-docker-testnet
+[submodule "networks/geth"]
+	path = networks/geth
+	url = https://github.com/mtouloup/eth-docker-testnet.git

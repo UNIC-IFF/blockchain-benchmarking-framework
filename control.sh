@@ -21,7 +21,7 @@ Network types:
        Runs the action for the  network of each supported type for the given arguments
   <network-type>
        Runs the action for the given network type. If there is no such type, it exits with error.
-  --start-monitoring-stack|-mon
+  --monitoring-stack|-mon <name of mon stack> 
        Starts the monitoring stack
 Actions:
   start     --val-num|-n <num of validators>
@@ -53,6 +53,17 @@ function start_network()
   nvals=$1
   echo "Starting network with $nvals validators..."
   # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
+  echo "  network started!"
+}
+
+function control_monstack()
+{
+  monstack=$1
+  echo "Control monitoring stack $1..."
+  # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
+  ./monitoring-stacks/$monstack/control.sh $2
+  #run_monitoring_services.sh 
+
   echo "  network started!"
 }
 
@@ -109,9 +120,12 @@ while [ "$1" != "" ]; do
       start_network $VAL_NUM
       exit
       ;;
-    --start-monitoring-stack|-mon ) shift
+    --monitoring-stack|-mon ) shift
       echo "$@"
-#      ./monitoring-stack/run_monitoring_services.sh
+      monstack_name=$1
+      shift
+      args="$@"
+      start_monstack $monstack_name $args
       exit
       while [ "$1" != "" ]; do
         case $1 in 
@@ -127,6 +141,11 @@ while [ "$1" != "" ]; do
     --list-network-types|-list ) shift
       echo "$@"
       list_supported_networks
+      exit
+      ;;
+    --list-monitoring-stacks|-list_mon ) shift
+      echo "$@"
+      list_supported_monstacks
       exit
       ;;
     *) 

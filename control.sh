@@ -63,8 +63,23 @@ function control_monstack()
   # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
   ./monitoring-stacks/$monstack/control.sh $2
   #run_monitoring_services.sh 
+}
+function control_tgen()
+{
+  monstack=$1
+  echo "Control traffic-generator $1..."
+  # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
+  ./traffic-generators/$monstack/control.sh $2
+  #run_monitoring_services.sh 
+}
 
-  echo "  network started!"
+function control_scenario()
+{
+  monstack=$1
+  echo "Control scenario $1..."
+  # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
+  ./scemarios/$monstack/control.sh $2
+  #run_monitoring_services.sh 
 }
 
 function stop_network()
@@ -125,17 +140,23 @@ while [ "$1" != "" ]; do
       monstack_name=$1
       shift
       args="$@"
-      start_monstack $monstack_name $args
+      control_monstack $monstack_name $args
       exit
-      while [ "$1" != "" ]; do
-        case $1 in 
-             -n|--val-num ) shift
-               VAL_NUM=$1
-               ;;
-        esac
-        shift
-      done
-      start_network $VAL_NUM
+      ;;
+    --scenario|-sc ) shift
+      echo "$@"
+      scenario_name=$1
+      shift
+      args="$@"
+      control_scenario $scenario_name $args
+      exit
+      ;;
+    --traffic-generator|-tgen ) shift
+      echo "$@"
+      tgen_name=$1
+      shift
+      args="$@"
+      control_tgen $tgen_name $args
       exit
       ;;
     --list-network-types|-list ) shift
@@ -146,6 +167,16 @@ while [ "$1" != "" ]; do
     --list-monitoring-stacks|-list_mon ) shift
       echo "$@"
       list_supported_monstacks
+      exit
+      ;;
+    --list-traffic-generators|-list_tgen ) shift
+      echo "$@"
+      list_supported_traffic_generators
+      exit
+      ;;
+    --list-scenarios|-list_sc ) shift
+      echo "$@"
+      list_supported_scenarios
       exit
       ;;
     *) 

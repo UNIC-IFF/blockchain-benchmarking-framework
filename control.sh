@@ -21,6 +21,12 @@ Usage : $(basename $0) <network-type> <action> <arguments>
 Network types:
   --list-network-types|-list
        Prints a list of the supported  network types
+  --list-traffic-generators|-list-tgen
+       Prints a list of the installed traffic-generators
+  --list-monitoring-stacks|-list-mon
+       Prints a list of the installed monitoring-stacks
+  --list-scenarios|-list-sc
+       Prints a list of the installed  scenarios
   --all|-a
        Runs the action for the  network of each supported type for the given arguments
   <network-type>
@@ -118,6 +124,28 @@ function list_supported_networks()
   echo "${supported_nettypes[@]}"
 
 }
+function list_supported_traffic_generators()
+{
+  echo "List supported traffic generators:"
+  supported_nettypes=$(ls ${TRAFFIC_GENERATORS_ROOT_DIR})
+  echo "${supported_nettypes[@]}"
+
+}
+function list_supported_monstacks()
+{
+  echo "List supported monitoring stacks:"
+  supported_nettypes=$(ls ${MONSTACKS_ROOT_DIR})
+  echo "${supported_nettypes[@]}"
+
+}
+function list_supported_scenarios()
+{
+  echo "List supported scenarios:"
+  supported_nettypes=$(ls ${SCENARIOS_ROOT_DIR})
+  echo "${supported_nettypes[@]}"
+
+}
+
 ARGS="$@"
 
 if [ $# -lt 1 ]

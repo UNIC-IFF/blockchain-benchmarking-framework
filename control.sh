@@ -11,6 +11,10 @@ source $ENVFILE
 ###
 
 NETWORKS_ROOT_DIR=${NETWORKS_ROOT_DIR:-"$(realpath ./networks)"}
+SCENARIOS_ROOT_DIR=${SCENARIOS_ROOT_DIR:-"$(realpath ./scenarios)"}
+MONSTACKS_ROOT_DIR=${MONSTACKS_ROOT_DIR:-"$(realpath ./monitoring-stacks)"}
+TRAFFIC_GENERATORS_ROOT_DIR=${TRAFFIC_GENERATORS_ROOT_DIR:-"$(realpath ./traffic-generators)"}
+
 USAGE="$(basename $0) is the main control script for the Blockchain Benchmarking Framework.
 Usage : $(basename $0) <network-type> <action> <arguments>
 
@@ -23,6 +27,10 @@ Network types:
        Runs the action for the given network type. If there is no such type, it exits with error.
   --monitoring-stack|-mon <name of mon stack> 
        Starts the monitoring stack
+  --traffic-generator|-tgen <name of traffic generator> 
+       Starts the traffic generator
+  --scenario|-sc <name of mon stack> 
+       Starts the scenario
 Actions:
   start     --val-num|-n <num of validators>
        Starts a network with <num_validators> 

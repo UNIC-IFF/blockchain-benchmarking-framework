@@ -10,3 +10,6 @@
 [submodule "networks/geth"]
 	path = networks/geth
 	url = https://github.com/mtouloup/eth-docker-testnet.git
+[submodule "networks/stellar-docker-testnet"]
+	path = networks/stellar-docker-testnet
+	url = https://github.com/mtouloup/stellar-docker-testnet

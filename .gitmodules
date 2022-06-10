@@ -1,6 +1,6 @@
 [submodule "monitoring-stack"]
 	path = monitoring-stacks/prom-monitoring-stack
-	url = ../BBF-monitoring
+	url = https://github.com/UNIC-IFF/BBF-monitoring
 [submodule "networks/xrpl"]
 	path = networks/xrpl
 	url = https://github.com/UNIC-IFF/ripple-docker-testnet

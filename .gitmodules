@@ -6,7 +6,7 @@
 	url = https://github.com/UNIC-IFF/ripple-docker-testnet
 [submodule "networks/besu-poa"]
 	path = networks/besu-poa
-	url = ../besu-docker-testnet
+	url = https://github.com/UNIC-IFF/besu-docker-testnet/tree/bbf-compatibility
 [submodule "networks/geth"]
 	path = networks/geth
 	url = https://github.com/mtouloup/eth-docker-testnet.git

@@ -4,7 +4,6 @@
 [submodule "networks/xrpl"]
 	path = networks/xrpl
 	url = https://github.com/UNIC-IFF/ripple-docker-testnet
-	branch = 4th-article-bbf-compatibility
 [submodule "networks/besu-poa"]
 	path = networks/besu-poa
 	url = ../besu-docker-testnet

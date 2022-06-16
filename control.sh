@@ -10,10 +10,10 @@ source $ENVFILE
 . $(dirname $0)/scripts/helper_functions.sh
 ###
 
-NETWORKS_ROOT_DIR=${NETWORKS_ROOT_DIR:-"$(dirname $0 ./networks)"}
-SCENARIOS_ROOT_DIR=${SCENARIOS_ROOT_DIR:-"$(dirname $0 ./scenarios)"}
-MONSTACKS_ROOT_DIR=${MONSTACKS_ROOT_DIR:-"$(dirname $0 ./monitoring-stacks)"}
-TRAFFIC_GENERATORS_ROOT_DIR=${TRAFFIC_GENERATORS_ROOT_DIR:-"$(dirname $0 ./traffic-generators)"}
+NETWORKS_ROOT_DIR=${NETWORKS_ROOT_DIR:-"$(dirname $0)/networks"}
+SCENARIOS_ROOT_DIR=${SCENARIOS_ROOT_DIR:-"$(dirname $0)/scenarios"}
+MONSTACKS_ROOT_DIR=${MONSTACKS_ROOT_DIR:-"$(dirname $0)/monitoring-stacks"}
+TRAFFIC_GENERATORS_ROOT_DIR=${TRAFFIC_GENERATORS_ROOT_DIR:-"$(dirname $0)/traffic-generators"}
 
 USAGE="$(basename $0) is the main control script for the Blockchain Benchmarking Framework.
 Usage : $(basename $0) <network-type> <action> <arguments>

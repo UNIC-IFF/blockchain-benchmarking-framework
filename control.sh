@@ -75,7 +75,7 @@ function control_monstack()
   monstack=$1
   echo "Control monitoring stack $1..."
   # TESTNET_NAME=$TESTNET_NAME docker-compose -f docker-compose-testnet.yml up -d
-  ./monitoring-stacks/$monstack/control.sh $2
+  $MONSTACKS_ROOT_DIR/$monstack/control.sh $2
   #run_monitoring_services.sh 
 }
 function control_tgen()

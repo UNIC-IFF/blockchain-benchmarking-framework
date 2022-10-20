@@ -1,3 +1,5 @@
+:no_entry: [DEPRECATED] Active at https://github.com/UniversityOfNicosia/blockchain-benchmarking-framework-1
+
 # Blockchain Benchmarking Framework
 Backbone scripts and configuration for Blockchain Benchmarking Framework.
 
